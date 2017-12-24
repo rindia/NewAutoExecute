@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="functionTest">
+    <listeners>
+        <listener class-name="framework.utilities.TestCaseWatcher">
+        </listener>
+    </listeners>
+    <test name="parallelTest">
+        <classes>
+            <class name="seleniumtest.PracticeHomeTest">
+                <methods>
+                    <include name="verifyPageTitle"/>
+                    <exclude name="Verify_SignIn_Link_Is_Dispalyed_HomePage"/>
+                    <exclude name="Click_SignIn_Link"/>
+                </methods>
+            </class>
+            <class name="seleniumtest.PracticeSignInTest">
+                <methods>
+                    <exclude name="Verify_txt_On_SignInPage"/>
+                    <exclude name="Verify_EmailValidation"/>
+                    <exclude name="Verify_Existing_MailId_Error"/>
+                    <exclude name="VerifyBlankMailerrorSignInButton"/>
+                    <exclude name="VerifyBlankPaswderrorSignInButton"/>
+                    <exclude name="NegativeAuth"/>
+                    <exclude name="PositiveLogin"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>
